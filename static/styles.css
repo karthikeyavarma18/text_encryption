@@ -1,0 +1,91 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #f06c64, #1e3c72);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px; /* Reduced padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Reduced max-width */
+    width: 100%;
+    max-height: 80vh; /* Constrained max-height */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em; /* Adjusted font size */
+    margin-bottom: 15px; /* Reduced margin */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px; /* Reduced padding */
+    margin-bottom: 15px; /* Reduced margin */
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: white;
+    padding: 10px 20px; /* Reduced padding */
+    margin: 10px 0; /* Reduced margin */
+    border: none;
+    border-radius: 20px; /* Adjusted border radius */
+    cursor: pointer;
+    font-size: 16px; /* Adjusted font size */
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #45a049, #1b5e20);
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+textarea {
+    resize: none;
+    height: 100px; /* Reduced height */
+}
+
+.result {
+    margin-top: 10px; /* Reduced margin */
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px; /* Reduced padding */
+    border-radius: 10px;
+    max-width: 350px; /* Reduced max-width */
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.result pre {
+    text-align: left;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 14px; /* Adjusted font size */
+    line-height: 1.5;
+}

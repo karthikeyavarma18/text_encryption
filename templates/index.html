@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Encryption App</h1>
+        <label for="plaintext">Plaintext:</label>
+        <textarea id="plaintext"></textarea>
+        <button onclick="encrypt()">Encrypt</button>
+        <label for="ciphertext">Ciphertext:</label>
+        <textarea id="ciphertext"></textarea>
+        <button onclick="decrypt()">Decrypt</button>
+        <div class="result">
+            <h2>Result:</h2>
+            <pre id="result"></pre>
+        </div>
+    </div>
+    <script>
+        function encrypt() {
+            const plaintext = document.getElementById('plaintext').value;
+            fetch('/encrypt', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ plaintext: plaintext })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ciphertext').value = data.ciphertext;
+                document.getElementById('result').textContent = 'Encrypted: ' + data.ciphertext;
+            });
+        }
+
+        function decrypt() {
+            const ciphertext = document.getElementById('ciphertext').value;
+            fetch('/decrypt', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ ciphertext: ciphertext })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').textContent = 'Decrypted: ' + data.plaintext;
+            });
+        }
+    </script>
+</body>
+</html>
